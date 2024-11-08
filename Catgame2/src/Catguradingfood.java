@@ -91,15 +91,15 @@ public class Catguradingfood extends JFrame {
         private int score = 0;
         private int health = 5;
         private int gunPositionX;
-        private int ammo = 300;  // จำนวนกระสุนเริ่มต้น
+        private int ammo = 200;  // จำนวนกระสุนเริ่มต้น
         private boolean ammoAvailable = true;  // สถานะของกระสุน (ว่ายิงได้หรือไม่)
         private int currentLevel = 1;
        
        
 
-        private LinkedList<SmallBall> bullets = new LinkedList<>();
-        private LinkedList<Enemy> enemies = new LinkedList<>();
-        private LinkedList<AmmoItem> ammoItems = new LinkedList<>();  // สำหรับเก็บรายการไอเท็มกระสุน
+        private ArrayList<SmallBall> bullets = new ArrayList<>();
+        private ArrayList<Enemy> enemies = new ArrayList<>();
+        private ArrayList<AmmoItem> ammoItems = new ArrayList<>();  // สำหรับเก็บรายการไอเท็มกระสุน
         private Thread enemyThread, bulletThread;
         private Random random = new Random();
         
@@ -119,7 +119,7 @@ public class Catguradingfood extends JFrame {
            
             score = 0;
             health = 5;
-            ammo = 300;
+            ammo = 200;
             ammoAvailable = true;
             currentLevel = 1;
             normalEnemiesSpawned = 0;
