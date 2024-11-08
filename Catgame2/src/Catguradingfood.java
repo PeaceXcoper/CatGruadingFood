@@ -103,7 +103,7 @@ public class Catguradingfood extends JFrame {
         private Thread enemyThread, bulletThread;
         private Random random = new Random();
         
-        // Images for background, enemies, gun, and ammo item
+
         private Image backgroundImage;
         private Image enemyImage;
         private Image greenEnemyImage;
@@ -315,7 +315,7 @@ public class Catguradingfood extends JFrame {
             }
         }
 
-        // New AmmoItem class with falling speed control using Thread
+       
         class AmmoItem {
             int x, y;
             boolean active = true;
@@ -324,7 +324,7 @@ public class Catguradingfood extends JFrame {
                 this.x = x;
                 this.y = y;
 
-                // Thread for falling down the item
+               
                 Thread fallingThread = new Thread(() -> {
                     while (active && this.y < getHeight()) {
                         this.y += 5;  // ควบคุมความเร็วการตกของไอเท็ม
@@ -398,11 +398,11 @@ public class Catguradingfood extends JFrame {
                     Enemy enemy = enemies.get(i);
                     enemy.move();
         
-                    // Check if enemy goes beyond screen bounds
+                   
                     if (enemy.y > getHeight()+100) {
-                        health--;  // Reduce health by 1 if enemy goes off-screen
-                        enemies.remove(i);  // Remove enemy
-                        i--;  // Adjust index
+                        health--; 
+                        enemies.remove(i); 
+                        i--; 
                     }
                 }
                 repaint();
@@ -433,7 +433,7 @@ public class Catguradingfood extends JFrame {
                     for (int j = 0; j < enemies.size(); j++) {
                         Enemy enemy = enemies.get(j);
 
-                        //int hitboxRadius = BALL_RADIUS * 8;
+                       
 
 
                         if (overlaps(bx, by, BALL_RADIUS, enemy.x, enemy.y, 50)) {
